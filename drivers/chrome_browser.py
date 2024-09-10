@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from browser import Browser
+from drivers.browser import Browser
 
 class ChromeBrowser(Browser):
     

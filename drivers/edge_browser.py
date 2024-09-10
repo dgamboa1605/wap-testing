@@ -1,4 +1,4 @@
-from browser import Browser
+from drivers.browser import Browser
 from selenium.webdriver.edge.options import Options
 from selenium import webdriver
 

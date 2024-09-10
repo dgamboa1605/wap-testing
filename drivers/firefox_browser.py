@@ -1,6 +1,6 @@
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
-from browser import Browser
+from drivers.browser import Browser
 
 class FirefoxBrowser(Browser):
 

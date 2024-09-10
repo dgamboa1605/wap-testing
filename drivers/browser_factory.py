@@ -1,12 +1,12 @@
-from browser import Browser
-from chrome_browser import ChromeBrowser
-from firefox_browser import FirefoxBrowser
-from edge_browser import EdgeBrowser
+from drivers.browser import Browser
+from drivers.chrome_browser import ChromeBrowser
+from drivers.firefox_browser import FirefoxBrowser
+from drivers.edge_browser import EdgeBrowser
 
 class BrowserFactory:
     
     @staticmethod
-    def get_browser(self, browser_name: str, options=None) -> Browser:
+    def get_browser(browser_name: str, options=None) -> Browser:
         browsers = {
             "chrome": ChromeBrowser,
             "firefox": FirefoxBrowser,
