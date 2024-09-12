@@ -2,3 +2,5 @@ selenium
 pytest
 webdriver-manager
 allure-pytest
+pylint
+pytest-xdist
