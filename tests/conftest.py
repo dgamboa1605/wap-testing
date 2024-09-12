@@ -27,7 +27,7 @@ def browser() -> Any:
 
     try:
         driver = BrowserFactory.get_browser(
-            config.BROWSER, config.CHROME_OPTIONS).get_driver()
+            config.BROWSER, config.BROWSER_OPTIONS).get_driver()
         logger.info(f"Browser initialized with URL: {config.URL}")
         driver.get(config.URL)
         yield driver

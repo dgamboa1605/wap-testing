@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from drivers.browser import Browser
 from utilities.logger import Logger
+from config import config
 
 
 class ChromeBrowser(Browser):
@@ -30,7 +31,8 @@ class ChromeBrowser(Browser):
             self.logger.info("Chrome WebDriver successfully initialized")
             return webdriver.Chrome(options=chrome_options)
         except Exception as e:
-            self.logger.error(f"Failed to initialize Chrome WebDriver: {str(e)}")
+            self.logger.error(
+                f"Failed to initialize Chrome WebDriver: {str(e)}")
             raise
 
     def _add_options(self, chrome_options: Options) -> None:
@@ -46,7 +48,13 @@ class ChromeBrowser(Browser):
                 self.logger.info("Adding Chrome options")
                 for option in self.options:
                     self.logger.debug(f"Added option: {option}")
-                    chrome_options.add_argument(option)
+                    if option == "mobileEmulation":
+                        self.logger.debug(
+                            f"Added mobile emulation for device name: {config.DEVICE_NAME}")
+                        chrome_options.add_experimental_option(
+                            option, {"deviceName": config.DEVICE_NAME})
+                    else:
+                        chrome_options.add_argument(option)
                 self.logger.info("All Chrome options added successfully")
             else:
                 self.logger.warning("No options provided for Chrome WebDriver")
