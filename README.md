@@ -37,24 +37,30 @@ This framework is designed for automating UI tests using Selenium WebDriver with
 
 ```
 wap-testing
+│
 ├── config/
 │   └── config.py        # Configuration settings (e.g., browser, URL, waits, logging)
+│
 ├── drivers/
 │   ├── browser_factory.py  # Browser factory for handling multiple browsers
 │   ├── chrome_browser.py   # Chrome browser setup
 │   ├── firefox_browser.py  # Firefox browser setup
 │   └── edge_browser.py     # Edge browser setup
+│
 ├── pages/
 │   ├── base_page.py     # Base class for common page actions
 │   ├── home_page.py     # Page object for the Home Page
 │   ├── search_page.py   # Page object for the Search Page
 │   └── streamer_page.py # Page object for the Streamer Page
+│
 ├── tests/
 │   ├── conftest.py      # Pytest fixtures
 │   └── test_search_page.py  # Test cases for search functionality
+│
 ├── utilities/
 │   ├── logger.py        # Logger utility
 │   └── utils.py         # Utility functions
+│
 ├── logs/                # Directory to store logs
 ├── reports/             # Directory for Allure reports
 ├── pytest.ini           # Pytest configuration file
